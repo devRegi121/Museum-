@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>MURZAD Museum</title>
+    <link rel="icon" href="index img/logo.webp" type="image/webp">
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        #registrationSection {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar starts here -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+            <div class="container-fluid">
+                <a href="#" class="navbar-brand d-flex align-items-center">
+                    <img src="images/logo.webp" alt="MUZARD Logo" class="logo-img me-2">
+                    <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Collections</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Educational Resources</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">Visit Us</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero section -->
+    <section class="hero d-flex justify-content-center align-items-center text-center text-light"
+        style="background-image: url(images/hero\ img.webp); height: 100vh;">
+        <div class="hero-content">
+            <h1 class="display-3">Discover the Wonders of the Past</h1>
+            <p class="lead">Step into history and explore our diverse collections.</p>
+            <a href="#" class="btn btn-warning btn-lg mt-4">Explore Collections</a>
+        </div>
+    </section>
+
+    <!-- Registration Button -->
+    <section id="welcome" class="d-flex align-items-center">
+        <div class="container text-center text-light">
+            <h1 class="welcome-title hidden">Welcome to Our Museum</h1>
+            <p class="welcome-subtitle hidden">Discover our collections and register for a visit.</p>
+            <button type="button" class="btn welcome-button hidden" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                Register to Visit
+            </button>
+        </div>
+    </section>
+
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="registrationModalLabel">Museum Visitor Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="surname" class="form-label">Surname</label>
+                                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="visitDate" class="form-label">Preferred Visit Date</label>
+                            <input type="date" class="form-control" id="visitDate" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="visitTime" class="form-label">Preferred Visit Time</label>
+                            <input type="time" class="form-control" id="visitTime">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message (Optional)</label>
+                            <textarea class="form-control" id="message" rows="3" placeholder="Any special requests or questions?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- cards -->
+
+
+    <!-- Featured Collections Section -->
+    <section class="featured-collections py-5  text-light">
+        <div class="container text-center">
+            <h2 class="display-4 mb-5">Featured Collections</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <img src="images/collection1.jpg" class="card-img-top" alt="Ancient Artifacts">
+                        <div class="card-body">
+                            <h5 class="card-title">Ancient Artifacts</h5>
+                            <p class="card-text">Explore relics from ancient civilizations.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <img src="images/collection2.jpg" class="card-img-top" alt="Medieval Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Medieval Art</h5>
+                            <p class="card-text">Discover the beauty of medieval craftsmanship.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 border-0 shadow-lg">
+                        <img src="images/collection3.jpg" class="card-img-top" alt="Modern Art">
+                        <div class="card-body">
+                            <h5 class="card-title">Modern Art</h5>
+                            <p class="card-text">Experience the vibrancy of modern creativity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-light text-center py-4">
+        <p>&copy; 2024 MURZAD Museum. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
