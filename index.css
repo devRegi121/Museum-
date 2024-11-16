@@ -1,0 +1,284 @@
+body {
+    font-family: emoji;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #000;
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: emoji;
+}
+
+.navbar-brand .text-danger {
+    color: #c88246 !important;
+    /* Red color for "Museum" */
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+.navbar-toggler-icon {
+    background-color: #FFD700;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+}
+
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.hero .btn-warning {
+    background-color: #FFD700;
+    border-color: #FFD700;
+}
+
+.hero .btn-warning:hover {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+/* Featured Collections Section */
+.featured-collections {
+
+    padding: 50px 0;
+    background-color: #111;
+    
+
+}
+
+.featured-collections h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #FFD700;
+}
+
+
+
+/* cards */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #222;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #FFD700;
+}
+
+.card-text {
+    color: #ddd;
+}
+
+/* welcome style */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 3s ease, transform 3s ease;
+}
+
+/* Fade-in  */
+.welcome-title.animate, .welcome-subtitle.animate, .welcome-button.animate {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* animation delays */
+.welcome-title.animate { transition-delay: 0.1s; }
+.welcome-subtitle.animate { transition-delay: 0.3s; }
+.welcome-button.animate { transition-delay: 0.5s; }
+
+/* Button Styling */
+.welcome-button {
+    padding: 0.8em 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    color: white;
+    background: linear-gradient(135deg, #e7a924, #feb47b); 
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/*welcome container spacing */
+.container {
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+
+/* Hover effect */
+.welcome-button:hover {
+    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Reverse gradient */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+}
+
+/* Scale effect on scroll */
+.welcome-button.animate {
+    transform: scale(1.1); 
+}
+/* Button styling */
+.container .btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.container .btn-primary:hover {
+    background-color: #feb47b;
+}
+
+
+
+/* Modal styling */
+.modal-content {
+    background-color: #f7f9fc;
+    border-radius: 10px;
+}
+
+.modal-header {
+    background-color: #feb47b;
+    color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.modal-header h5 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+}
+
+.btn-primary {
+    background-color: #feb47b;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #f48c3d;
+}
+
+.modal-body label {
+    font-weight: bold;
+    color: #333;
+}
+
+#registrationModal .form-control {
+    border-radius: 5px;
+}
+
+/* Button styling */
+.container .btn-primary {
+    padding: 0.8rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+}
+
+.container .btn-primary:hover {
+    background-color: #feb47b;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Styles */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav .nav-link {
+        font-size: 1rem;
+    }
+
+    .featured-collections h2 {
+        font-size: 2.5rem;
+    }
+    .modal-dialog {
+        margin: 1.75rem auto;
+        max-width: 90%;
+    }
+}
