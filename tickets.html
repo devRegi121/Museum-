@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>MURZAD Museum</title>
+    <link rel="icon" href="index img/logo.webp" type="image/webp">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="tickets.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        #registrationSection {
+            display: none;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- Navbar starts here -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="images/logo.webp" alt="MUZARD Logo" class="logo-img me-2">
+                    <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Addmision Information  -->
+    <div class="container pt-5">
+        <div class="row mb-3">
+            <div class="col">
+                <h1>Admission Tickets</h1>
+            </div>
+            <div class="col"></div>
+        </div>
+        <div class="row">
+            <!-- Left Colimn: General Information -->
+            <div class="col">
+                <ul class="generalInfo">
+                    <li>10 € for Adults, 8 € for Seniors, 2 € for Kids</li>
+                    <li>5 € for Students with a valid student ID</li>
+                    <li>2 € for Visitors with a disability; free for a caregiver of a visitor with a disability (in
+                        person only)</li>
+                    <li>Free for Children under 5 and Members</li><br>
+                    <li> Online tickets must be presented at the museum entrance, either as a printed copy or displayed
+                        digitally on your device.</li>
+                    <li> Tickets can also be purchased directly at the museum entrance if you prefer to buy them in
+                        person.</li>
+                </ul>
+            </div>
+            <!-- Right Column: Membership Card -->
+            <div class="col d-flex justify-content-center">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <p class="card-text">Members support the museum’s mission while enjoying yearlong free admission
+                        </p>
+                        <a href="membership.html" class="btn btn-primary">Become a Member</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ticket Purchase -->
+
+    <form class="TicketPurchase">
+        <div class="container mt-5">
+            <h2>Book Tickets</h2>
+            <ol>
+                <li>Select Date</li>
+                <p>Please select an available date for your visit. Please note online ticket sales end one hour before
+                    closing.</p>
+                <input type="date">
+                <br>
+                <br>
+                <li>Select Ticket</li>
+                <div class="ticket-container">
+                    <div class="ticket-row">
+                        <span class="ticket-name">Adults</span>
+                        <span class="ticket-price">€10</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('adults', -1)">-</button>
+                            <span id="adults-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('adults', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Seniors</span>
+                        <span class="ticket-price">€8</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('seniors', -1)">-</button>
+                            <span id="seniors-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('seniors', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Students</span>
+                        <span class="ticket-price">€5</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('students', -1)">-</button>
+                            <span id="students-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('students', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Kids (5-14 years old)</span>
+                        <span class="ticket-price">€2</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('kids', -1)">-</button>
+                            <span id="kids-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('kids', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Visitors with a disability (in-person only)</span>
+                        <span class="ticket-price">€2</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('disability', -1)">-</button>
+                            <span id="disability-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('disability', 1)">+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Children under 5</span>
+                        <span class="ticket-price">Free</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('under5', -1)"
+                                disabled>-</button>
+                            <span id="under5-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('under5', 1)"
+                                disabled>+</button>
+                        </div>
+                    </div>
+                    <div class="ticket-row">
+                        <span class="ticket-name">Members</span>
+                        <span class="ticket-price">Free</span>
+                        <div class="ticket-counter">
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('members', -1)"
+                                disabled>-</button>
+                            <span id="members-ticket-count">0</span>
+                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('members', 1)"
+                                disabled>+</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Email address  -->
+                <li>Enter Email Address</li>
+                <div class="emailContainer">
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                </div>
+                <!-- Payment Method Information -->
+                <li>Select Payment Method</li>
+                <div class="d-flex">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePayRadio" checked>
+                        <label class="form-check-label" for="applePayRadio">
+                            <img src="images/applePay.png" alt="Apple Pay" class="img-fluid" style="max-width: 60px;">
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio">
+                        <label class="form-check-label" for="creditCardRadio">
+                            <img src="images/credit card icon.png" alt="Credit Card" class="img-fluid"
+                                style="max-width: 60px;">
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypalRadio">
+                        <label class="form-check-label" for="paypalRadio">
+                            <img src="images/paypalIcon.png" alt="PayPal" class="img-fluid" style="max-width: 60px;">
+                        </label>
+                    </div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="visaRadio">
+                        <label class="form-check-label" for="visaRadio">
+                            <img src="images/visaIcon.png" alt="Visa" class="img-fluid" style="max-width: 60px;">
+                        </label>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                                <p class="total-amount">Total Amount: €<span id="total-amount">0</span></p>
+                            <button type="button" class="btn btn-lg btn-danger mt-3" data-bs-toggle="popover"
+                                title="Purchase Completed"
+                                data-bs-content="Your ticket has been sent to you via email.">
+                                Purchase
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+            </ol>
+
+        </div>
+        </div>
+        </div>
+    </form>
+
+
+    <div class="container mt-5">
+        <h3> Visitor Guideline</h3>
+        <p style="padding-left: 55px;">Plan ahead by checking our<a href="visitorGuide.html" style="color: black;">
+                Visitor Guidelines.</a></p>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- Footer Section -->
+    <footer class="bg-black text-light text-center py-4">
+        <p>&copy; 2024 MURZAD Museum. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

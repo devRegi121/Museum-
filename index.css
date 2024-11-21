@@ -43,7 +43,7 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #FFD700;
+    background-color: #000000;
 }
 
 /* Hero Section */
@@ -87,7 +87,7 @@ body {
 
     padding: 50px 0;
     background-color: #111;
-    
+
 
 }
 
@@ -136,15 +136,25 @@ body {
 }
 
 /* Fade-in  */
-.welcome-title.animate, .welcome-subtitle.animate, .welcome-button.animate {
+.welcome-title.animate,
+.welcome-subtitle.animate,
+.welcome-button.animate {
     transform: translateY(0);
     opacity: 1;
 }
 
 /* animation delays */
-.welcome-title.animate { transition-delay: 0.1s; }
-.welcome-subtitle.animate { transition-delay: 0.3s; }
-.welcome-button.animate { transition-delay: 0.5s; }
+.welcome-title.animate {
+    transition-delay: 0.1s;
+}
+
+.welcome-subtitle.animate {
+    transition-delay: 0.3s;
+}
+
+.welcome-button.animate {
+    transition-delay: 0.5s;
+}
 
 /* Button Styling */
 .welcome-button {
@@ -153,7 +163,7 @@ body {
     font-weight: bold;
     border: none;
     color: white;
-    background: linear-gradient(135deg, #e7a924, #feb47b); 
+    background: linear-gradient(135deg, #e7a924, #feb47b);
     border-radius: 8px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
@@ -170,14 +180,17 @@ body {
 
 /* Hover effect */
 .welcome-button:hover {
-    background: linear-gradient(135deg, #feb47b, #ff7e5f); /* Reverse gradient */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); /* Shadow effect */
+    background: linear-gradient(135deg, #feb47b, #ff7e5f);
+    /* Reverse gradient */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    /* Shadow effect */
 }
 
 /* Scale effect on scroll */
 .welcome-button.animate {
-    transform: scale(1.1); 
+    transform: scale(1.1);
 }
+
 /* Button styling */
 .container .btn-primary {
     padding: 0.8rem 2rem;
@@ -241,6 +254,12 @@ body {
 }
 
 
+.no-underline {
+    text-decoration: none;
+    color: inherit;
+}
+
+
 
 
 
@@ -277,8 +296,30 @@ footer {
     .featured-collections h2 {
         font-size: 2.5rem;
     }
+
     .modal-dialog {
         margin: 1.75rem auto;
         max-width: 90%;
     }
+}
+
+
+/* Megi -- exhb continue*/
+.center-yellow {
+    text-align: center;
+    color: yellow;
+}
+
+.black-text {
+    color: black;
+}
+
+.btn-yellow {
+    background-color: #ffc107;
+    color: #000;
+}
+
+.btn-yellow:hover {
+    background-color: #e0a800;
+    color: #000;
 }
