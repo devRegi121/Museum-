@@ -7,9 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>MURZAD Museum</title>
-    <link rel="icon" href="index img/logo.webp" type="image/webp">
+    <link rel="icon" href="images/logo.webp" type="image/webp">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="tickets.css">
+
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
@@ -75,15 +76,14 @@
     </div>
 
     <!-- Ticket Purchase -->
-
-    <form class="TicketPurchase">
+    <form>
         <div class="container mt-5">
             <h2>Book Tickets</h2>
             <ol>
                 <li>Select Date</li>
                 <p>Please select an available date for your visit. Please note online ticket sales end one hour before
                     closing.</p>
-                <input type="date">
+                <input type="date" required>
                 <br>
                 <br>
                 <li>Select Ticket</li>
@@ -147,45 +147,48 @@
                         <span class="ticket-name">Children under 5</span>
                         <span class="ticket-price">Free</span>
                         <div class="ticket-counter">
-                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('under5', -1)"
-                                disabled>-</button>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('under5', -1)">-</button>
                             <span id="under5-ticket-count">0</span>
-                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('under5', 1)"
-                                disabled>+</button>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('under5', 1)">+</button>
                         </div>
                     </div>
                     <div class="ticket-row">
                         <span class="ticket-name">Members</span>
                         <span class="ticket-price">Free</span>
                         <div class="ticket-counter">
-                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('members', -1)"
-                                disabled>-</button>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('members', -1)">-</button>
                             <span id="members-ticket-count">0</span>
-                            <button class="btn btn-outline-secondary btn-sm" onclick="updateTicketCount('members', 1)"
-                                disabled>+</button>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                onclick="updateTicketCount('members', 1)">+</button>
                         </div>
                     </div>
                 </div>
-                <!-- Email address  -->
+
+                <!-- Email address -->
                 <li>Enter Email Address</li>
                 <div class="emailContainer">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                            required>
                         <label for="floatingInput">Email address</label>
                     </div>
                 </div>
+
                 <!-- Payment Method Information -->
                 <li>Select Payment Method</li>
                 <div class="d-flex">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePayRadio" checked>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePayRadio" required>
                         <label class="form-check-label" for="applePayRadio">
                             <img src="images/applePay.png" alt="Apple Pay" class="img-fluid" style="max-width: 60px;">
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio" required>
                         <label class="form-check-label" for="creditCardRadio">
                             <img src="images/credit card icon.png" alt="Credit Card" class="img-fluid"
                                 style="max-width: 60px;">
@@ -193,40 +196,31 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypalRadio">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypalRadio" required>
                         <label class="form-check-label" for="paypalRadio">
                             <img src="images/paypalIcon.png" alt="PayPal" class="img-fluid" style="max-width: 60px;">
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="visaRadio">
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="visaRadio" required>
                         <label class="form-check-label" for="visaRadio">
                             <img src="images/visaIcon.png" alt="Visa" class="img-fluid" style="max-width: 60px;">
                         </label>
                     </div>
                 </div>
-
-
-                <div class="row">
+                <div class="row mt-4 custom-row">
                     <div class="col-sm-6">
-                        <div class="card">
-                                <p class="total-amount">Total Amount: €<span id="total-amount">0</span></p>
-                            <button type="button" class="btn btn-lg btn-danger mt-3" data-bs-toggle="popover"
-                                title="Purchase Completed"
-                                data-bs-content="Your ticket has been sent to you via email.">
-                                Purchase
-                            </button>
-
-                        </div>
+                        <p class="total-amount">Total Amount: €<span id="total-amount">0</span></p>
+                        <button type="button" class="btn btn-danger btn-custom" id="purchaseButton"
+                            required>Purchase</button>
                     </div>
                 </div>
             </ol>
+        </div>
 
-        </div>
-        </div>
-        </div>
     </form>
+
 
 
     <div class="container mt-5">
@@ -235,25 +229,15 @@
                 Visitor Guidelines.</a></p>
     </div>
 
-
-
-
-
-
-
-
     <!-- Footer Section -->
     <footer class="bg-black text-light text-center py-4">
         <p>&copy; 2024 MURZAD Museum. All Rights Reserved.</p>
     </footer>
 
     <!-- Bootstrap JS -->
-
-    <script src="index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-        crossorigin="anonymous"></script>
-
+    <script src="tickets.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 
 </html>
