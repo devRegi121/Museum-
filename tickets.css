@@ -115,7 +115,20 @@ padding: 25px;
     padding: 10px;
     padding-left: 40px;
 }
-.card{
-    transition: none;
-    max-width: 520px;
+
+
+.btn-custom {
+    padding: 15px 30px; 
+    font-size: 20px;  
+    border-radius: 0;  
+    width: 520px;
+    max-width: 800px;
+}
+
+.form-control {
+    font-size: 14px;
+    padding: 8px;
+}
+.btn {
+    transition: none ;
 }
