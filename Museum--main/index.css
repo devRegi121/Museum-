@@ -125,3 +125,13 @@ footer {
     color: #000;
 }
 
+.image-container {
+    overflow: hidden; /* Ensures image zoom stays within card boundaries */
+}
+
+.zoom-on-hover {
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
