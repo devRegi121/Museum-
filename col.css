@@ -1,0 +1,202 @@
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #b30000; /* Dark Red */
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFD700; /* Gold for 'Museum' */
+    text-transform: uppercase;
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    color: white;
+    text-transform: uppercase; /* Capitalize the links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
+    background-color: #333; /* Optional: Dark background for the hero section */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.hero .btn-warning {
+    background-color: #FFD700;
+    border-color: #FFD700;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.hero .btn-warning:hover {
+    background-color: #ffcc00;
+    border-color: #ffcc00;
+}
+
+/* Featured Collections Section */
+.featured-collections {
+    padding: 50px 0;
+    background-color: #111; /* Dark background for collections */
+}
+
+.featured-collections h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: #FFD700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Card Styles */
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Soft shadow around the cards */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Slight lift effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #222; /* Darker background for card body */
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.card-text {
+    color: #ddd;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Button Styling */
+.btn-yellow {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-yellow:hover {
+    background-color: #e0a800;
+    color: #000;
+    transform: translateY(-5px); /* Small hover effect */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #b30000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+}
+
+/* Text Centering and Styling */
+.center-yellow {
+    text-align: center;
+    color: yellow;
+}
+
+.black-text {
+    color: black;
+}
+
+.image-container {
+    overflow: hidden; /* Ensures image zoom stays within card boundaries */
+}
+
+.zoom-on-hover {
+    display: block;
+    width: 100%;
+    transition: transform 0.5s ease;
+}
+
+/* Hover Zoom Effect */
+.zoom-on-hover:hover {
+    transform: scale(1.1); /* Image zoom effect on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .featured-collections h2 {
+        font-size: 2.5rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .btn-yellow {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
