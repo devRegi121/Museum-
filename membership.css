@@ -6,28 +6,22 @@ body {
 
 .content-container {
     margin: 50px auto;
-    /* Adds space around the content */
     max-width: 1200px;
-    /* Limits the maximum width of the container */
 }
 
 .text-content {
     font-size: 18px;
-    /* Makes text readable */
     line-height: 1.6;
-    /* Improves readability */
 }
 
 .image-content img {
     max-width: 100%;
-    /* Ensures the image scales to fit its container */
     height: auto;
-    /* Maintains the aspect ratio of the image */
 }
 
 .text-content {
     text-align: center;
-    /* Center-align text for smaller screens */
+
 }
 
 .text-content p {
@@ -36,7 +30,6 @@ body {
 
 .image-content {
     text-align: center;
-    /* Center-align image for smaller screens */
 }
 
 .background {
@@ -62,11 +55,8 @@ body {
 
     display: flex;
     justify-content: center;
-    /* Centers horizontally */
     align-items: center;
-    /* Centers vertically */
     height: 100%;
-    /* Ensures full height of the parent container */
     background-color: rgba(245, 245, 245, 0.199);
 }
 
@@ -107,7 +97,6 @@ body {
 .list-unstyled {
 
     justify-content: center;
-    /* Centers horizontally */
 }
 
 .prove {
@@ -126,18 +115,13 @@ body {
 
 .text-content {
     text-align: left;
-    /* Ensures text is left-aligned */
     padding-left: 20px;
-    /* Adds uniform padding to the left */
     margin: 0;
-    /* Resets any default margin */
 }
 
 .text-content h1,
 .text-content h2,
 .text-content p {
     margin-left: 0;
-    /* Ensures no extra margin causes misalignment */
     text-indent: 0;
-    /* Prevents indentation on the first line */
 }
