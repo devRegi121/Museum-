@@ -3,30 +3,33 @@ body {
     color: black;
     font-family: 'Roboto';
 }
-.mb-4{
+
+.mb-4 {
     font-size: 60px;
     font-weight: bold;
     padding: 50px;
-    font-family:'Roboto';
+    font-family: 'Roboto';
 }
-.mt-5{
+
+.mt-5 {
     max-width: 600px;
     align-items: center;
-    }
+}
 
-    #loginButton{
-border-radius: 0;
-background-color: orange;
-    }
-    #createAccountButton {
-        border-radius: 0;
-        background-color: white;  /* White background */
-        border: 2px solid orange;  /* Orange border */
-        color: orange;  /* Orange text color */
-        
-    }
+#loginButton {
+    border-radius: 0;
+    background-color: orange;
+}
 
-    #createAccountButton:hover {
-        background-color: orange;  /* Orange background on hover */
-        color: white;  /* White text color on hover */
-    }
+#createAccountButton {
+    border-radius: 0;
+    background-color: white;
+    border: 2px solid orange;
+    color: orange;
+
+}
+
+#createAccountButton:hover {
+    background-color: orange;
+    color: white;
+}
