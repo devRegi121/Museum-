@@ -162,3 +162,47 @@ padding-bottom: 30px;
     background-color: rgba(223, 151, 17, 0.103);
     padding: 10px;
 }
+#registrationSection {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .text_head {
+        font-size: 1.5rem;
+    }
+
+    .contactInfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand img {
+        max-width: 30px;
+    }
+
+    .accordion-button {
+        font-size: 1rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 20px;
+    }   
+
+    .contactInfo h1 {
+        font-size: 1.5rem;
+    }
+}
