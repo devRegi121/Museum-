@@ -17,8 +17,6 @@ let ticketCounts = {
     under5: 0,
     members: 0
 };
-
-
 function updateTotal() {
     let total = 0;
     const ticketTypes = ['adults', 'seniors', 'students', 'kids', 'disability', 'under5', 'members'];
@@ -37,7 +35,6 @@ function updateTicketCount(ticketType, change) {
     document.getElementById(`${ticketType}-ticket-count`).textContent = ticketCounts[ticketType];
     updateTotal();
 }
-
 
 document.getElementById('purchaseButton').addEventListener('click', function () {
     const totalAmount = parseInt(document.getElementById('total-amount').textContent, 10);
