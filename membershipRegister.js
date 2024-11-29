@@ -9,11 +9,10 @@ let cityInput = document.getElementById("city");
 let countryInput = document.getElementById("country");
 let zipCodeInput = document.getElementById("zipCode");
 let registerForm = document.querySelector("form");
-
+ 
 registerForm.addEventListener("submit", function (event) {
   event.preventDefault(); 
-
-  const email = emailInput.value.trim();
+   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
   const confirmPassword = confirmPasswordInput.value.trim();
   const firstName = firstNameInput.value.trim();
@@ -52,8 +51,6 @@ registerForm.addEventListener("submit", function (event) {
 
   alert("User registered successfully!");
 });
-
-
 function resetForm() {
   emailInput.value = "";
   passwordInput.value = "";
@@ -66,7 +63,6 @@ function resetForm() {
   countryInput.value = "";
   zipCodeInput.value = "";
 }
-
 function loadUsers() {
   const users = JSON.parse(localStorage.getItem("users")) || [];
   console.log("Registered users:", users); 
