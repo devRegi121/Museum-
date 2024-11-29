@@ -1,8 +1,6 @@
-
 let emailInput = document.getElementById("email");
 let passwordInput = document.getElementById("password");
 let loginForm = document.querySelector("form");
-
 loginForm.addEventListener("submit", function (event) {
     event.preventDefault(); 
     const email = emailInput.value.trim();
