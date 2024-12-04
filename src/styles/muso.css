@@ -72,3 +72,8 @@ button:hover {
     color: #0f0;
     font-weight: bold;
 }
+.btn-submit {
+    display: block;  /* Ensures the button is a block element */
+    margin: 0 auto;  /* Centers it horizontally */
+    padding: 10px 20px;  /* Adjust padding as needed */
+}
