@@ -1,0 +1,182 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif, Arial, sans-serif;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 0;
+}
+
+/* Typography */
+h1 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h1#thefirstthing {
+    font-size: 3rem;
+    color: #ffffff;
+}
+
+/* Utility Classes */
+.d-none {
+    display: none; /* Utility class for hiding elements */
+}
+
+.container {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #b30000; /* Dark Red */
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #FFD700; /* Gold for 'Museum' */
+}
+
+.navbar-brand img {
+    width: 50px;
+    height: auto;
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    color: white;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #FFD700;
+}
+
+/* Exhibitions Section */
+.exhibitions {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.exhibition {
+    flex: 1;
+    background-color: #222;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.exhibition:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Individual Exhibition Styles */
+.exhibition#silk-roads {
+    background: linear-gradient(to bottom, #c49b48, #a97c2c);
+}
+
+.exhibition#hew-locke {
+    background: linear-gradient(to bottom, #1f361d, #0c210e);
+}
+
+.exhibition#picasso {
+    background: linear-gradient(to bottom, #6d1f1f, #360d0d);
+}
+
+.exhibition#impressionism {
+    background: linear-gradient(to bottom, #5987af, #1e7fa8);
+}
+
+.exhibition#textile {
+    background: linear-gradient(to bottom, #5f407b, #170c21);
+}
+
+.exhibition#vangogh {
+    background: linear-gradient(to bottom, #4d9887, #0d3628);
+}
+
+.content {
+    padding: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 100%; /* Image will scale to match the width of its container */
+    max-width: 500px; /* Limits the maximum width of the image */
+    height: auto; /* Maintains the image's aspect ratio */
+    margin: 0 auto; /* Centers the image horizontally */
+    display: block; /* Ensures the image doesn't overflow */
+}
+
+button {
+    margin: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.exhibitions:nth-of-type(2) {
+    margin-top: 30px; /* Adjust the space as needed */
+}
+
+/* Custom Primary Button */
+.btn-primary {
+    background-color: rgba(1, 0, 0, 0.8); /* Your desired background color */
+    color: rgb(225, 225, 225); /* Your desired text color */
+    border: none; /* Removes the default border */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.btn-primary:hover {
+    background-color: rgba(255, 255, 255, 1); /* Hover effect */
+    color: black; /* Ensures text color stays consistent */
+}
+
+#adminButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1000;
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    opacity: 0.6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#adminButton:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}

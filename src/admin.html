@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <link rel="stylesheet" href="/src/styles/admin.css">
+
+</head>
+<body>
+    <h1>Admin Page - Booking Data</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Event</th>
+                <th>Date</th>
+                <th>Adults</th>
+                <th>Kids</th>
+                <th>Card</th>
+            </tr>
+        </thead>
+        <tbody id="bookingTableBody">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+    <script>
+        // Retrieve booking data from localStorage
+        const bookingData = JSON.parse(localStorage.getItem('bookingData'));
+
+        if (bookingData) {
+            const tableBody = document.getElementById('bookingTableBody');
+
+            const row = `
+                <tr>
+                    <td>${bookingData.name}</td>
+                    <td>${bookingData.surname}</td>
+                    <td>${bookingData.event}</td>
+                    <td>${bookingData.date}</td>
+                    <td>${bookingData.adults}</td>
+                    <td>${bookingData.kids}</td>
+                    <td>${bookingData.card}</td>
+                </tr>
+            `;
+
+            tableBody.innerHTML = row;
+        } else {
+            document.body.innerHTML += '<p>No booking data found in localStorage.</p>';
+        }
+    </script>
+</body>
+</html>
