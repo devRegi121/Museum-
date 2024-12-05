@@ -7,7 +7,7 @@ body {
 .mt-5 h2{
     font-size: 60px;
     font-weight: bold;
-    padding: 20px;
+    padding: 50px;
     font-family:'Roboto';
 }
 .mt-5{
@@ -17,4 +17,9 @@ align-items: center;
 .mt-5 button{
     border-radius: 0;
     
+}
+#registerButton{
+border-radius: 0; 
+background-color: orange;
+
 }

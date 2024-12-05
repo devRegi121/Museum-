@@ -14,30 +14,43 @@
 
 <body>
     <!-- Navbar -->
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
-            <div class="container-fluid">
-                <a href="index.html" class="navbar-brand d-flex align-items-center">
-                    <img src="images/logo.webp" alt="MUZARD Logo" class="logo-img me-2">
-                    <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="col.html" class="nav-link">Collections</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Educational Resources</a></li>
-                        <li class="nav-item"><a href="visit.html" class="nav-link">Visit Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
-                    </ul>
-                </div>
+<!-- Navbar starts here -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="images/logo.webp" alt="MUZARD Logo" class="logo-img me-2">
+                <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="col.html" class="nav-link">Collections</a></li>
+                    <li class="nav-item"><a href="one.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="edresources.html" class="nav-link">Educational Resources</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="visit.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Visit Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="visit.html">Plan Your Visit</a></li>
+                            <li><a class="dropdown-item" href="tickets.html">Buy Tickets</a></li>
+                            <li><a class="dropdown-item" href="membership.html">Become a Member</a></li>
+                            <li><a class="dropdown-item" href="visitorGuide.html">Visitor Guide</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
+</header>
 
     <!--Banner photo -->
     <section class="hero d-flex justify-content-center align-items-center text-center text-light"
