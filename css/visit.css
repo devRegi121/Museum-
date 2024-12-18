@@ -1,0 +1,208 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto';
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.text_head {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.788);
+    font-size: 60px;
+    padding: 10px;
+    font-family: 'Roboto';
+}
+
+
+.accordion-button {
+    background-color: white;
+    color: white;
+}
+
+
+.accordion-button.collapsed {
+    background-color: white;
+    color: black;
+}
+
+.accordion-button:hover {
+    background-color: white(236, 211, 181);
+    color: rgb(12, 6, 6);
+}
+
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(138, 136, 132, 0.178);
+
+}
+
+
+.accordion-body {
+    background-color: white;
+    color: black;
+}
+
+.btn btn-dark {
+    color: black;
+
+}
+
+#headTittle {
+    padding-bottom: 15px;
+}
+
+#ticketText {
+    padding-bottom: 15px;
+}
+
+#museumAdress {
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.644);
+}
+
+.contactInfo {
+    color: #c88246;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+.contactInfo container {
+    padding: 10px;
+
+
+}
+
+.rounded float-start {
+    height: 200;
+    width: 50;
+}
+
+#contactInfoPhoto {
+    height: 800;
+    width: 300;
+
+}
+
+#formColumn {
+
+    padding: 20px;
+}
+
+.form-control,
+.form-select,
+textarea {
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #0000009f;
+}
+
+.contactInfo .container {
+    padding: 20px;
+    font-size: 30px;
+
+}
+
+.contactInfo h3 {
+    padding: 30px;
+    font-size: 15px
+}
+
+.contactInfo h1 {
+    padding: 30px;
+    font-weight: bold;
+    color: black;
+
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+#styleContainer {
+    background-color: rgba(229, 228, 226, 0.377);
+}
+
+#SubmitButton {
+    background-color: orange;
+border: none;
+    padding: 20px;
+    width: 140px;
+    height: 60px;
+    font-size: 15px;
+    border-radius: 0;
+    font-weight: bold;
+
+
+}
+.col-lg-6 h1{
+font-weight: bold;
+padding-top: 20px;
+padding-bottom: 30px;
+}
+.mt-3{
+    padding-left: 100px;
+}
+
+.infoStyle{
+    background-color: rgba(229, 228, 226, 0.377) ;
+}
+.backgroundColor{
+
+    background-color: rgba(223, 151, 17, 0.103);
+    padding: 10px;
+}
+#registrationSection {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .text_head {
+        font-size: 1.5rem;
+    }
+
+    .contactInfo h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar-brand img {
+        max-width: 30px;
+    }
+
+    .accordion-button {
+        font-size: 1rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .col-lg-6 {
+        margin-bottom: 20px;
+    }   
+
+    .contactInfo h1 {
+        font-size: 1.5rem;
+    }
+}

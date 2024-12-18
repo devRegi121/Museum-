@@ -1,0 +1,134 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto';
+}
+
+.card {
+    border: none;
+}
+
+.col h1 {
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px;
+}
+
+.card-body {
+    background-color: 	#eeefed;
+    border-radius: 0;
+}
+
+.card-body p {
+    color: 	black;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.card-body .btn-primary {
+    background-color: black;
+    border-radius: 0;
+}
+.card-body .btn-primary:hover {
+background-color: 	#e1dedc;
+}
+
+.generalInfo {
+
+    list-style-type: none;
+    margin: 10px;
+    font-size: 18px;
+}
+
+
+.containerStepper {
+    max-width: 600px;
+}
+.mt-5 h2{
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px;
+}
+.mt-5 h3{
+    font-size: 50px;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px; 
+}
+.TicketPurchase{
+    font-size: 18px;
+    padding: 20px;
+    padding-left: 50px;
+}
+.mt-5 li{
+font-weight: bold;
+font-size: 25px;
+padding: 25px;
+}
+
+
+
+.ticket-container {
+    max-width: 800px;
+
+    border: none;
+    padding: 15px;
+    background-color: white;
+    font-size: 18px;
+}
+
+.ticket-row {
+    display: grid;
+    grid-template-columns: 1fr 80px 1fr;
+    align-items: left;
+    margin-bottom: 10px;
+}
+
+.ticket-name {
+    text-align: left;
+    padding-right: 10px;
+}
+
+.ticket-price {
+    text-align: center;
+}
+
+.ticket-counter {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+}
+
+.ticket-counter span {
+    width: 20px;
+    text-align: center;
+}
+.emailContainer{
+    max-width: 520px;
+}
+
+.d-flex .form-check{
+    margin-right: 30px;
+    padding: 10px;
+    padding-left: 40px;
+}
+
+
+.btn-custom {
+    padding: 15px 30px; 
+    font-size: 20px;  
+    border-radius: 0;  
+    width: 520px;
+    max-width: 800px;
+}
+
+.form-control {
+    font-size: 14px;
+    padding: 8px;
+}
+.btn {
+    transition: none ;
+}

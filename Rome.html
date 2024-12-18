@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>MURZAD Museum</title>
+    
+    <link rel="stylesheet" href="css/two.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+   <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .content {
+        flex: 2;
+        padding-right: 40px;
+    }
+
+    .details {
+        flex: 1;
+        border-left: 1px solid #555;
+        padding-left: 40px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 15px;
+    }
+
+    .details div {
+        margin-bottom: 20px;
+    }
+
+    .details div strong {
+        display: block;
+        margin-bottom: 5px;
+        color: #ccc;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+
+    button {
+        background-color: white;
+        color: black;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #ccc;
+    }
+   </style>
+
+</head>
+<body>
+    
+   <!-- Navbar starts here -->
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
+        <div class="container-fluid">
+            <a href="index.html" class="navbar-brand d-flex align-items-center">
+                <img src="images/museumLogo.jpeg" alt="MUZARD Logo" class="logo-img me-2">
+                <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="col.html" class="nav-link">Collections</a></li>
+                    <li class="nav-item"><a href="one.html" class="nav-link">Events</a></li>
+                    <li class="nav-item"><a href="edresources.html" class="nav-link">Educational Resources</a></li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="visit.html" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Visit Us
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="visit.html">Plan Your Visit</a></li>
+                            <li><a class="dropdown-item" href="tickets.html">Buy Tickets</a></li>
+                            <li><a class="dropdown-item" href="membership.html">Become a Member</a></li>
+                            <li><a class="dropdown-item" href="visitorGuide.html">Visitor Guide</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;</p>
+<p> &nbsp;&nbsp;&nbsp;&nbsp;</p>
+    <div class="container">
+        <div class="content">
+            <h1>The Walls of Rome: A Journey Through Time.</h1>
+            <p>Experience the grandeur and history of ancient Rome in the immersive event, "The Walls of Rome: A Journey Through Time." Step into the world of Roman fortifications as you explore the architectural marvels that defined an empire and protected its glory for centuries.</p>
+            <p>  This event brings to life the stories of power, resilience, and ingenuity behind Rome's legendary walls. Through interactive displays, virtual reconstructions, and rare artifacts, discover how these formidable structures influenced the city’s development and safeguarded its legacy.</p>
+            <p>  Whether you’re an avid historian or a curious adventurer, this unique experience offers a fresh perspective on the engineering feats and cultural significance of Rome’s ancient walls. Don’t miss this opportunity to walk through history and uncover the secrets of an empire.</p>
+        </div>
+
+        <!-- Right Section (Details) -->
+        <div class="details">
+            <div>
+                <strong> Dates:</strong>
+                26 September 2024 – 23 February 2025<br>
+                Daily: 10.00–17.00 (Fridays 21.00)<br>
+                
+            </div>
+            <hr>
+            <div>
+                <strong> Location:</strong>
+                Room 37<br>
+                The Joseph Hotung Great Court Gallery<br>
+                
+            </div>
+            <hr>
+            <div>
+                <strong> Tickets:</strong>
+                Adults from £10, Members and under-16s free.<br>
+                
+            </div>
+            <hr>
+            <a href="book.html" class="btn btn-light">Book tickets ➤</a>
+        </div>
+    </div>
+</body>
+</html>

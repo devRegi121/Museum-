@@ -7,8 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>MURZAD Museum</title>
-    <link rel="icon" href="index img/logo.webp" type="image/webp">
-    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="images/museumLogo.jpeg" type="image/webp">
+    <link rel="stylesheet" href="css/index.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         #registrationSection {
@@ -23,8 +23,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
             <div class="container-fluid">
-                <a href="#" class="navbar-brand d-flex align-items-center">
-                    <img src="images/logo.webp" alt="MUZARD Logo" class="logo-img me-2">
+                <a href="index.html" class="navbar-brand d-flex align-items-center">
+                    <img src="images/museumLogo.jpeg" alt="MUZARD Logo" class="logo-img me-2">
                     <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -34,24 +34,35 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Collections</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Educational Resources</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Visit Us</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="col.html" class="nav-link">Collections</a></li>
+                        <li class="nav-item"><a href="one.html" class="nav-link">Events</a></li>
+                        <li class="nav-item"><a href="edresources.html" class="nav-link">Educational Resources</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="visit.html" id="navbarDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Visit Us
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="visit.html">Plan Your Visit</a></li>
+                                <li><a class="dropdown-item" href="tickets.html">Buy Tickets</a></li>
+                                <li><a class="dropdown-item" href="membership.html">Become a Member</a></li>
+                                <li><a class="dropdown-item" href="visitorGuide.html">Visitor Guide</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
     <!-- Hero section -->
     <section class="hero d-flex justify-content-center align-items-center text-center text-light"
         style="background-image: url(images/hero\ img.webp); height: 100vh;">
         <div class="hero-content">
             <h1 class="display-3">Discover the Wonders of the Past</h1>
             <p class="lead">Step into history and explore our diverse collections.</p>
-            <a href="#" class="btn btn-warning btn-lg mt-4">Explore Collections</a>
+            <a href="col.html" class="btn btn-warning btn-lg mt-4">Explore Collections</a>
         </div>
     </section>
 
@@ -59,15 +70,16 @@
     <section id="welcome" class="d-flex align-items-center">
         <div class="container text-center text-light">
             <h1 class="welcome-title hidden">Welcome to Our Museum</h1>
-            <p class="welcome-subtitle hidden">Discover our collections and register for a visit.</p>
-            <button type="button" class="btn welcome-button hidden" data-bs-toggle="modal" data-bs-target="#registrationModal">
-                Register to Visit
-            </button>
+            <p class="welcome-subtitle hidden">Explore our stunning collection and plan your visit today for an unforgettable experience!</p>
+            <a href="visit.html" class="btn btn-primary welcome-button hidden">
+                Plan your visit!
+            </a>
         </div>
     </section>
 
     <!-- Registration Modal -->
-    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -79,11 +91,13 @@
                         <div class="row mb-3">
                             <div class="col-md-6">
                                 <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" placeholder="Enter your first name" required>
+                                <input type="text" class="form-control" id="firstName"
+                                    placeholder="Enter your first name" required>
                             </div>
                             <div class="col-md-6">
                                 <label for="surname" class="form-label">Surname</label>
-                                <input type="text" class="form-control" id="surname" placeholder="Enter your surname" required>
+                                <input type="text" class="form-control" id="surname" placeholder="Enter your surname"
+                                    required>
                             </div>
                         </div>
                         <div class="mb-3">
@@ -104,14 +118,15 @@
                         </div>
                         <div class="mb-3">
                             <label for="message" class="form-label">Message (Optional)</label>
-                            <textarea class="form-control" id="message" rows="3" placeholder="Any special requests or questions?"></textarea>
+                            <textarea class="form-control" id="message" rows="3"
+                                placeholder="Any special requests or questions?"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary w-100">Register</button>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
 
 
@@ -129,29 +144,35 @@
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 <div class="col">
                     <div class="card h-100 border-0 shadow-lg">
-                        <img src="images/collection1.jpg" class="card-img-top" alt="Ancient Artifacts">
-                        <div class="card-body">
-                            <h5 class="card-title">Ancient Artifacts</h5>
-                            <p class="card-text">Explore relics from ancient civilizations.</p>
-                        </div>
+                        <a href="exh.html" class="no-underline">
+                            <img src="images/ancientgreece.jpg" class="card-img-top" alt="Ancient Artifacts">
+                            <div class="card-body">
+                                <h5 class="card-title">Ancient Artifacts</h5>
+                                <p class="card-text">Explore relics from ancient civilizations.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 border-0 shadow-lg">
-                        <img src="images/collection2.jpg" class="card-img-top" alt="Medieval Art">
-                        <div class="card-body">
-                            <h5 class="card-title">Medieval Art</h5>
-                            <p class="card-text">Discover the beauty of medieval craftsmanship.</p>
-                        </div>
+                        <a href="medv.html" class="no-underline">
+                            <img src="images/mona-lisa-1.jpeg" class="card-img-top" alt="Medieval Art">
+                            <div class="card-body">
+                                <h5 class="card-title">Medieval Art</h5>
+                                <p class="card-text">Discover the beauty of medieval craftsmanship.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col">
                     <div class="card h-100 border-0 shadow-lg">
-                        <img src="images/collection3.jpg" class="card-img-top" alt="Modern Art">
-                        <div class="card-body">
-                            <h5 class="card-title">Modern Art</h5>
-                            <p class="card-text">Experience the vibrancy of modern creativity.</p>
-                        </div>
+                        <a href="mod.html" class="no-underline">
+                            <img src="images/starry_night.jpg" class="card-img-top" alt="Modern Art">
+                            <div class="card-body">
+                                <h5 class="card-title">Modern Art</h5>
+                                <p class="card-text">Experience the vibrancy of modern creativity.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -169,7 +190,10 @@
 
     <!-- Bootstrap JS -->
 
-    <script src="index.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
         crossorigin="anonymous"></script>
