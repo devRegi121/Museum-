@@ -11,8 +11,7 @@
      <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     </head>
 <body>
-    <!-- Navbar -->
-    <!-- Navbar starts here -->
+    
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
             <div class="container-fluid">
@@ -52,32 +51,35 @@
 <!--Banner photo -->
 
 <section class="hero d-flex justify-content-center align-items-center text-center text-light" 
-         style="background: url('index img/museum.jpg') no-repeat center center/cover; height: 50vh; margin-top: 56px;">
-    <div class="hero-content">
-        <h1 class="display-4">Collections</h1>
-    </div>
-</section>
-<section class="container py-5">
-    <div class="text-center">
-        <p class="lead">
+         style="height: 50vh; margin-top: 56px; position: relative; overflow: hidden; background: url('images/collectingmainphoto.jpg') no-repeat center center/cover;">
+    <!-- Content -->
+    <div class="hero-content d-flex flex-column align-items-center justify-content-center" 
+         style="z-index: 1; background-color: rgba(0, 0, 0, 0.5); padding: 20px; border-radius: 10px; width: 90%; max-width: 800px;">
+        <h1 class="display-4" style="margin-bottom: 20px;">Collections</h1>
+        <p class="lead" style="margin-bottom: 0;">
             The MURZAD Museum features a wide variety of collections from different periods in 
             history, showcasing art, artifacts, and stories from around the world. Each collection 
-            invites visitors to explore and connect with the past through creativity and 
-            innovation.
+            invites visitors to explore and connect with the past through creativity and innovation.
         </p>
     </div>
 </section>
-<div class="text-center mb-5">
-    <video controls style="width: 100%; max-width: 800px; height: auto;">
+<section class="container py-5 text-center" style="display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+    <video controls style="width: 100%; max-width: 800px; height: auto; border: 2px solid #ccc; border-radius: 10px; margin-bottom: 20px;">
         <source src="images/museumvideo.mp4" type="video/mp4">
     </video>
-</div>
+    <div>
+        <a href="onelook.html" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: #fff; background-color: #ffc107; border: none; border-radius: 5px; text-decoration: none; transition: background-color 0.3s ease;">
+            View all our collections with just one click
+        </a>
+    </div>
+</section>
+
 
 
 <!-- Collections Section -->
 <section class="container py-5">
     <div class="text-center mb-4">
-        <h2 class="fw-bold">Discover Our Collections</h2>
+        <h2 class="fw-bold">Information on some of our most well known collections</h2>
     </div>
     <div class="row">
         <div class="col-md-4 mb-4">
