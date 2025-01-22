@@ -1,0 +1,55 @@
+body {
+    background-color: white;
+    color: black;
+   
+}
+
+.GiftsCard {
+    padding-top: 60px;
+    padding-left: 20px; 
+    padding-right: 20px; 
+    padding-top: 30px;
+}
+.carousel-item img {
+    object-fit: cover; 
+    height: 200px; 
+  }
+  
+  .card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+
+.card .btn {
+    border-radius: 0; 
+    font-size: 0.875rem; 
+    padding: 0.5rem 1rem; 
+}
+
+
+.price-info {
+    font-weight: bold;
+    color: #333;
+}
+
+.code-info {
+    color: #666;
+    font-size: 0.875rem;
+}
+.card-body {
+    background-color: white; 
+    padding: 1rem; 
+}
+
+
+.display-4 {
+    font-family: 'Georgia', serif; 
+}
+
+.text-secondary {
+    font-style: italic; 
+}

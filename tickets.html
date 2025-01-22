@@ -10,9 +10,10 @@
     <link rel="icon" href="images/museumLogo.jpeg" type="image/webp">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/tickets.css">
-
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+
+
     <style>
         #registrationSection {
             display: none;
@@ -22,44 +23,83 @@
 </head>
 
 <body>
-    <!-- Navbar starts here -->
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-black">
             <div class="container-fluid">
                 <a href="index.html" class="navbar-brand d-flex align-items-center">
                     <img src="images/museumLogo.jpeg" alt="MUZARD Logo" class="logo-img me-2">
-                    <span class="text-white">MUZARD</span><span class="text-danger"> Museum</span>
+                    <span class="text-white">MUZARD</span><span class="text-danger"> Shop</span>
                 </a>
+
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="museumShop.html">Painting</a></li>
+                        <li><a class="dropdown-item" href="museumShopSouveniers.html">Souvenier & Gifts</a></li>
+                        <li><a class="dropdown-item" href="artists.html">Artists</a></li>
+                        <li><a class="dropdown-item" href="tickets.html">Tickets</a></li>
+                    </ul>
+                </div>
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="col.html" class="nav-link">Collections</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Events</a></li>
-                        <li class="nav-item"><a href="#" class="nav-link">Educational Resources</a></li>
+                        <!-- Search Box -->
+                        <li class="nav-item">
+                            <form class="d-flex">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </li>
+                        <!-- Login Button -->
+                        <li class="nav-item">
+                            <a href="loginPage.html" class="btn btn-outline-light ms-2" id="loginBtn">Login</a>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="visit.html" id="navbarDropdown" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Visit Us
+                        </li>
+
+                        <!-- Register Button -->
+                        <li class="nav-item">
+                            <a href="membershipRegister.html" class="btn btn-outline-light ms-2" id="registerBtn">Register</a>
+ 
+                        </li>
+                        <!-- Greeting and Logout Button -->
+                        <li class="nav-item dropdown" id="userGreeting" style="display: none;">
+                            <a 
+                                class="btn btn-outline-light dropdown-toggle" 
+                                href="#" 
+                                id="userDropdown" 
+                                role="button" 
+                                data-bs-toggle="dropdown" 
+                                aria-expanded="false"
+                            >
+                                <span id="greetingMessage"></span>
                             </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="visit.html">Plan Your Visit</a></li>
-                                <li><a class="dropdown-item" href="tickets.html">Buy Tickets</a></li>
-                                <li><a class="dropdown-item" href="membership.html">Become a Member</a></li>
-                                <li><a class="dropdown-item" href="visitorGuide.html">Visitor Guide</a></li>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="userInfo.html" id="showProfileBtn">Show Profile</a>
+                                </li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item">
+                            <a href="shoppingCart.html" class="btn btn-outline-light ms-2" id="cartBtn"  aria-expanded="false">
+                                <i class="fa fa-shopping-cart"></i> <span id="cartItemCount" class="badge bg-danger" style="display:none;">0</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-outline-light ms-2" id="logoutBtn">Logout</a>
+                        </li>
+                       
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
     <!-- Addmision Information  -->
     <div class="container pt-5">
         <div class="row mb-3">
@@ -104,7 +144,7 @@
                 <li>Select Date</li>
                 <p>Please select an available date for your visit. Please note online ticket sales end one hour before
                     closing.</p>
-                <input type="date" required>
+                <input type="date" id="visitDate" required>
                 <br>
                 <br>
                 <li>Select Ticket</li>
@@ -192,7 +232,7 @@
                 <li>Enter Email Address</li>
                 <div class="emailContainer">
                     <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
+                        <input type="email" class="form-control" id="email" placeholder="name@example.com"
                             required>
                         <label for="floatingInput">Email address</label>
                     </div>
@@ -202,14 +242,14 @@
                 <li>Select Payment Method</li>
                 <div class="d-flex">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePayRadio" required>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="applePayRadio" value="ApplePay" required>
                         <label class="form-check-label" for="applePayRadio">
                             <img src="images/applePay.png" alt="Apple Pay" class="img-fluid" style="max-width: 60px;">
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio" required>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="creditCardRadio" value="CreditCard" required>
                         <label class="form-check-label" for="creditCardRadio">
                             <img src="images/credit card icon.png" alt="Credit Card" class="img-fluid"
                                 style="max-width: 60px;">
@@ -217,14 +257,14 @@
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypalRadio" required>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="paypalRadio" value="PayPal" required>
                         <label class="form-check-label" for="paypalRadio">
                             <img src="images/paypalIcon.png" alt="PayPal" class="img-fluid" style="max-width: 60px;">
                         </label>
                     </div>
 
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="paymentMethod" id="visaRadio" required>
+                        <input class="form-check-input" type="radio" name="paymentMethod" id="visaRadio" value="Visa" required>
                         <label class="form-check-label" for="visaRadio">
                             <img src="images/visaIcon.png" alt="Visa" class="img-fluid" style="max-width: 60px;">
                         </label>
@@ -256,7 +296,11 @@
     </footer>
 
     <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/tickets.js"></script>
+    
+    
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
