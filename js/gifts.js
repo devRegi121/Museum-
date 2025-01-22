@@ -44,11 +44,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     $(document).ready(function () {
-        // Fetch Gifts Data
+        
         $.ajax({
             url: 'https://localhost:44326/api/Gift/get-all-gifts',
             method: 'GET',
             success: function (data) {
+                console.log(data);
+
                 const giftsCardContainer = $('.GiftsCard .row');
                 const isAdmin = userRole === 'admin';
                 data.forEach(gift => {
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const card = `
                         <div class="col">
     <div class="card">
-        <img src="${gift.image || 'default.jpg'}" class="d-block w-100" alt="${gift.name}">
+        <img src="${gift.url}" class="d-block w-100" alt="${gift.name}">
         <div class="card-body">
             <h5 class="card-title">${gift.name}</h5>
             <div class="d-flex flex-column align-items-start">
@@ -83,7 +85,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     // Add functionality for edit, save, delete buttons if admin
                     if (isAdmin) {
-                        cartBtn.style.display = 'none';
+                        console.log(isAdmin);
+                        $(`#cartBtn${gift.id}`).hide();
+                        $(`#addToCartButton${gift.id}`).hide();
+                        
 
                         $(`#editButton${gift.id}`).on('click', function () {
                             $(this).addClass('d-none');
@@ -109,13 +114,13 @@ document.addEventListener('DOMContentLoaded', function () {
                             const title = cardBody.find('.card-title');
                             const codeInfo = cardBody.find('.code-info');
                             const priceInfo = cardBody.find('.price-info');
-                            const urlInfo = cardBody.find('.url-info'); // URL field
+                            const urlInfo = cardBody.find('.url-info'); 
 
                             // Extract updated values
                             const updatedName = title.text().trim();
                             const updatedCode = codeInfo.text().replace('Code: ', '').trim();
                             const updatedPrice = parseFloat(priceInfo.text().replace('$', '').trim());
-                            const updatedUrl = urlInfo.text().trim();  // Get the updated URL
+                            const updatedUrl = urlInfo.text().trim();  
 
                             // Prepare updated gift data
                             const updatedGift = {
@@ -150,47 +155,46 @@ document.addEventListener('DOMContentLoaded', function () {
                         });
                     }
 
-                    console.log('User Role:', userRole); // Should output 'admin' for admins
-                    console.log('Is Admin:', isAdmin); // Should output true for admins
+                 
 
                     if (isAdmin) {
-                        console.log('Admin user detected. Appending Add New Gift Button.');
                         const addGiftButton = `
                             <button class="btn btn-warning" id="addNewGiftButton" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
                                 + Add New Gift
                             </button>`;
                         $('body').append(addGiftButton);
-                        H
+                        
 
 
-                        $(document).on('click', '#addNewGiftButton', function () {
-
+                        $(document).off('click', '#addNewGiftButton').on('click', '#addNewGiftButton', function () {
                             const newGiftCard = `
-                                <div class="col new-gift-card">
-                                    <div class="card">
-                                        <div class="card-body">
-                                            <input type="text" class="form-control mb-2 gift-name" placeholder="Gift Name">
-                                            <input type="text" class="form-control mb-2 gift-code" placeholder="Gift Code">
-                                            <input type="number" class="form-control mb-2 gift-price" placeholder="Gift Price">
-                                            <input type="text" class="form-control mb-2 gift-url" placeholder="Gift URL">
-                                            <button class="btn btn-success save-new-gift">Save</button>
-                                            <button class="btn btn-danger cancel-new-gift">Cancel</button>
-                                        </div>
-                                    </div>
-                                </div>`;
+                               <div class="col new-gift-card">
+    <div class="card">
+        <img src="default.jpg" class="card-img-top preview-image" alt="Gift Image">
+        <div class="card-body">
+            <input type="text" class="form-control mb-2 gift-name" placeholder="Gift Name">
+            <input type="text" class="form-control mb-2 gift-code" placeholder="Gift Code">
+            <input type="number" class="form-control mb-2 gift-price" placeholder="Gift Price">
+            <input type="text" class="form-control mb-2 gift-url" placeholder="Gift URL">
+            <button class="btn btn-success save-new-gift">Save</button>
+            <button class="btn btn-danger cancel-new-gift">Cancel</button>
+        </div>
+    </div>
+</div>
+`;
                             $('.GiftsCard .row').prepend(newGiftCard);
                         });
-
-
+                        
+                        
                         $(document).on('click', '.cancel-new-gift', function () {
                             $(this).closest('.new-gift-card').remove();
                         });
 
                         // Use delegated event binding for save button
-                        $(document).on('click', '.save-new-gift', function () {
+                        $(document).off('click', '.save-new-gift').on('click', '.save-new-gift', function () {
                             const cardBody = $(this).closest('.card-body');
                             const newGiftName = cardBody.find('.gift-name').val();
-                            const newGiftCode = parseInt(cardBody.find('.gift-code').val(), 10);  // Ensure the code is an integer
+                            const newGiftCode = parseInt(cardBody.find('.gift-code').val(), 10); 
                             const newGiftPrice = parseFloat(cardBody.find('.gift-price').val());
                             const newGiftUrl = cardBody.find('.gift-url').val();
 
@@ -215,7 +219,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                 contentType: 'application/json',
                                 data: JSON.stringify(newGift),
                                 success: function () {
-                                    alert('New gift added successfully!');
                                     window.location.reload();
                                 },
                                 error: function (error) {
@@ -231,13 +234,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                         $(`#deleteButton${gift.id}`).on('click', function () {
-                            if (confirm(`Are you sure you want to delete the gift: ${gift.name}?`)) {
+                            
                                 // Send DELETE request to the server
                                 $.ajax({
                                     url: `https://localhost:44326/api/Gift/delete-gift-by-id/${gift.id}`,
                                     method: 'DELETE',
                                     success: function () {
-                                        alert('Gift deleted successfully!');
+                                        
                                         $(`#deleteButton${gift.id}`).closest('.col').remove();
                                     },
                                     error: function (error) {
@@ -245,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         alert('Failed to delete gift.');
                                     }
                                 });
-                            }
+                            
                         });
                     }
 
@@ -253,31 +256,29 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
                     $(`#addToCartButton${gift.id}`).on('click', function () {
-                        const username = localStorage.getItem('username');  // Ensure username is fetched inside the click handler
-
-                        // Prepare the cart item object
+                        const username = localStorage.getItem('username');  
+                        // cart item object
                         const cartItem = {
                             productName: gift.name,
                             price: gift.price,
-                            quantity: 1,  // Default quantity is 1, you can modify if needed
+                            quantity: 1,  
                         };
 
-                        console.log('Adding to cart:', cartItem);  // Log the payload to check if it's correct
+                        console.log('Adding to cart:', cartItem);  
 
-                        // Send POST request to add the item to the shopping cart
+                        //  POST request to add the item to the shopping cart
                         $.ajax({
-                            url: `https://localhost:44326/api/ShoppingCart/AddItem?username=${username}`,  // Pass username as query param
+                            url: `https://localhost:44326/api/ShoppingCart/AddItem?username=${username}`,  
                             method: 'POST',
                             contentType: 'application/json',
-                            data: JSON.stringify(cartItem),  // Send the cart item as JSON
+                            data: JSON.stringify(cartItem),  
                             success: function (data) {
                                 console.log('Successfully added item to cart:', data);
                                 alert(`${cartItem.productName} added to the cart!`);
                             },
-                            error: function (xhr, status, error) {
-                                // Log error response for debugging
-                                console.error('Error adding item to cart:', xhr.responseText);
-                                alert(`Failed to add item to cart: ${xhr.statusText}`);
+                            error: function () {
+            
+                                alert(`Failed to add item to cart`);
                             }
                         });
 
