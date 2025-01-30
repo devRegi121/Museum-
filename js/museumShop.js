@@ -41,6 +41,34 @@ document.addEventListener('DOMContentLoaded', function () {
     if (cartBtn) cartBtn.style.display = 'none';
   }
 
+  const searchInput = document.querySelector('.form-control[placeholder="Search"]');
+  
+  // Search Filter
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.toLowerCase(); 
+    const cards = document.querySelectorAll('.card'); // Select all card elements
+
+    cards.forEach(card => {
+      // Extract searchable fields from the card
+      const cardTitle = card.querySelector('.card-header h4').textContent.toLowerCase();
+      const artistName = card.querySelector(`[id^="artistName"]`).value.toLowerCase();
+      const theme = card.querySelector(`[id^="theme"]`).value.toLowerCase();
+      const price = card.querySelector(`[id^="price"]`).value.toLowerCase();
+
+      // Check if the query matches any of the fields
+      if (
+        cardTitle.includes(query) ||
+        artistName.includes(query) ||
+        theme.includes(query) ||
+        price.includes(query)
+      ) {
+        card.style.display = ''; // Show the card if it matches
+      } else {
+        card.style.display = 'none'; // Hide the card if it doesn't match
+      }
+    });
+  });
+
   $(document).ready(function () {
     
 
@@ -90,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
                 <div class="row mb-3">
                   <div class="col-4">
-                    <label for="price${painting.id}" class="form-label">Price</label>
+                    <label for="price${painting.id}" class="form-label">Price $</label>
                   </div>
                   <div class="col-8">
                     <input type="text" class="form-control" id="price${painting.id}" value="${painting.price}" disabled>
@@ -181,17 +209,19 @@ document.addEventListener('DOMContentLoaded', function () {
               }
             });
           }
-
           $(document).on('click', `#addToCartButton${painting.id}`, function () {
             const username = localStorage.getItem('username');
             if (!username) {
                 window.location.href = 'loginPage.html';
             } else {
-                const cartItem = {
-                    productName: painting.name,
-                    price: painting.price,
-                    quantity: 1
-                };
+                if (painting.isSold) {
+                    alert('This painting is sold and cannot be added to the cart.');
+                } else {
+                    const cartItem = {
+                        productName: painting.name,
+                        price: painting.price,
+                        quantity: 1
+                    };
         
                 console.log('Preparing to send AJAX request:', cartItem);
         
@@ -210,6 +240,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         alert(`Failed to add item to cart: ${xhr.statusText}`);
                     }
                 });
+              }
             }
         });
         

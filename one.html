@@ -49,6 +49,7 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                    <li class="nav-item"><a href="museumShop.html" class="nav-link">Shop</a></li>
                 </ul>
             </div>
         </div>
@@ -65,18 +66,16 @@
             <!-- Dropdown for selecting the date -->
             <div class="col-md-4">
                 <label for="visitDate" class="form-label">When are you visiting?</label>
-                <select id="visitDate" class="form-select">
-                    <option selected>Choose</option>
-                    <option value="select_date">Select Date</option>
-                </select>
-                <input id="calendarInput" type="date" class="form-control mt-2 d-none">
+                <input id="calendarInput" type="date" class="form-control">
             </div>
+
 
             <!-- Dropdown for Who is Visiting -->
             <div class="col-md-4">
                 <label for="whoIsVisiting" class="form-label">Who is Visiting</label>
                 <select id="whoIsVisiting" class="form-select">
-                    <option selected>Choose </option>
+                    <option value="" disabled selected>Select an option</option>
+
                     <option value="individual">Individual</option>
                     <option value="group">Group</option>
                 </select>
@@ -86,7 +85,8 @@
             <div class="col-md-4">
                 <label for="whatTheySee" class="form-label">What will you like to see</label>
                 <select id="whatTheySee" class="form-select">
-                    <option selected>Choose </option>
+                    <option value="" disabled selected>Select an option</option>
+
                     <option value="accessible">Accessible Events</option>
                     <option value="seasonal">Seasonal Events</option>
                     <option value="online">Online Events</option>

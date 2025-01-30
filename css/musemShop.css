@@ -235,10 +235,21 @@ body {
   }
 
   #addPaintingBtn:hover {
-    background-color: #0056b3;
+    background-color: orange;
   }
 
+  .card {
+    background-color: white !important; /* Add this line */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px auto; /* Center the card */
+    padding: 10px;
+    width: 100%; /* Set card to take full width of its container */
+    max-width: 400px; /* Adjust to your desired max width */
+    display: flex;
+    justify-content: center;
+}
 
+  
 @media (max-width: 768px) {
     .row-cols-md-2 {
         row-gap: 15px;

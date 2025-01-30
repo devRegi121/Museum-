@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museum Catalog</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Museum Catalog</h1>
+        <nav>
+            <button id="view-works">View Works</button>
+            <button id="add-work">Add Work</button>
+        </nav>
+    </header>
+
+    <main>
+        <form id="search-form">
+            <label for="search-field">Search Field:</label>
+            <select id="search-field">
+                <option value="" disabled selected>Select a field</option>
+                <option value="name">Name</option>
+                <option value="artist">Artist</option>
+                <option value="category">Category</option>
+                <option value="era">Era</option>
+            </select>
+            <label for="search-input">Search:</label>
+            <input type="text" id="search-input" placeholder="Enter what you want">
+            <button type="submit">Search</button>
+        </form>
+        
+        <section id="work-list">
+            <h2>Works</h2>
+            <ul id="works-container"></ul>
+        </section>
+ <div id="works-container"></div>
+        <section id="work-form-section" style="display: none;">
+            <h2>Add/Edit Work</h2>
+            <form id="work-form">
+                <input type="hidden" id="work-id">
+        
+                <label>
+                    Name: <input type="text" id="name" required>
+                </label>
+        
+                <label>
+                    Artist: <input type="text" id="artist">
+                </label>
+        
+                <label>
+                    Description: <textarea id="description"></textarea>
+                </label>
+                <label>
+                    Category: <input type="text" id="category">
+                </label>
+                <label>
+                    Creation Date (Actual):
+                    <input type="date" id="creation_date">
+                </label>
+                <label>
+                    Creation Date (Text):
+                    <input type="text" id="creation_date_text" 
+                        placeholder="Enter a date you couldnt enter above">
+                </label>
+                
+                <label>
+                    Era: <input type="text" id="era" required>
+                </label>
+                <p id="form-error-message" class="hidden" style="color: red;"></p>
+                <button type="submit">Save Work</button>
+                <button type="button" id="cancel-btn">Cancel</button>
+            </form>
+        </section>        
+    </main>
+     <!-- Delete Confirmation Modal -->
+<div id="delete-modal" class="modal">
+    <div class="modal-content">
+        <h3>Delete Work</h3>
+        <p id="delete-modal-message"></p>
+        <div class="modal-buttons">
+            <button id="confirm-delete-btn" class="btn btn-danger">Yes, Delete</button>
+            <button id="cancel-delete-btn" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
+
+    <footer>
+        <p>&copy; 2024 Museum Catalog</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/one.js"></script>
+</body>
+</html>
+

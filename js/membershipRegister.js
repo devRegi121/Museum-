@@ -56,7 +56,7 @@ $(document).ready(function () {
       registerUser(user);
   });
 
-  // Define the function to send data to the API
+  
   function registerUser(user) {
       $.ajax({
           url: "https://localhost:44326/api/Registration/register-newUser", 
@@ -68,7 +68,7 @@ $(document).ready(function () {
               resetForm(); 
           },
           error: function (error) {
-              alert("Registration failed! Please check the console.");
+              alert("Registration failed!");
               console.error(error);
           }
           

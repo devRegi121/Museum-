@@ -1,20 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const visitDate = document.getElementById('visitDate');
     const calendarInput = document.getElementById('calendarInput');
     const visitorDropdown = document.getElementById('whoIsVisiting');
     const eventDropdown = document.getElementById('whatTheySee');
     const clearFiltersButton = document.getElementById('clearFilters');
-
-    // Event listener for the date dropdown
-    visitDate.addEventListener('change', () => {
-        if (visitDate.value === 'select_date') {
-            calendarInput.classList.remove('d-none');  // Show calendar input
-            calendarInput.focus();
-        } else {
-            calendarInput.classList.add('d-none');  // Hide calendar input
-            filterExhibitions();
-        }
-    });
 
     // Event listeners for filtering
     [calendarInput, visitorDropdown, eventDropdown].forEach(element => {
@@ -55,21 +43,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function toggleClearButton() {
         const isAnyFilterSelected = (
-            visitDate.value !== 'Choose' ||
+            calendarInput.value ||
             visitorDropdown.value !== 'Choose' ||
-            eventDropdown.value !== 'Choose' ||
-            calendarInput.value
+            eventDropdown.value !== 'Choose'
         );
         clearFiltersButton.classList.toggle('d-none', !isAnyFilterSelected);
     }
 
     // Clear Filters Button
     clearFiltersButton.addEventListener('click', () => {
-        visitDate.selectedIndex = 0;
         visitorDropdown.selectedIndex = 0;
         eventDropdown.selectedIndex = 0;
         calendarInput.value = '';
-        calendarInput.classList.add('d-none');
 
         document.querySelectorAll('.exhibition').forEach(exhibition => {
             exhibition.style.display = 'flex';  // Show all exhibitions

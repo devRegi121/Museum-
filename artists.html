@@ -31,6 +31,7 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                         <li><a class="dropdown-item" href="museumShop.html">Painting</a></li>
                         <li><a class="dropdown-item" href="museumShopSouveniers.html">Souvenier & Gifts</a></li>
+                        <li><a class="dropdown-item" href="artists.html">Artists</a></li>
                         <li><a class="dropdown-item" href="tickets.html">Tickets</a></li>
                     </ul>
                 </div>
@@ -42,27 +43,48 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <!-- Search Box -->
+
                         <li class="nav-item">
-                            <form class="d-flex">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <form class="d-flex" id="searchForm">
+                                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
                                 <button class="btn btn-outline-success" type="submit">Search</button>
                             </form>
                         </li>
+                        
 
                         <!-- Login Button -->
                         <li class="nav-item">
-                            <a href="loginPage.html" class="btn btn-outline-light ms-2">Login</a>
+                            <a href="loginPage.html" class="btn btn-outline-light ms-2" id="loginBtn">Login</a>
+
                         </li>
 
                         <!-- Register Button -->
                         <li class="nav-item">
-                            <a href="membershipRegister.html" class="btn btn-outline-light ms-2">Register</a>
+                            <a href="membershipRegister.html" class="btn btn-outline-light ms-2"
+                                id="registerBtn">Register</a>
+
+                        </li>
+                        <!-- Greeting and Logout Button -->
+                        <li class="nav-item dropdown" id="userGreeting" style="display: none;">
+                            <a class="btn btn-outline-light dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span id="greetingMessage"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <li>
+                                    <a class="dropdown-item" href="userInfo.html" id="showProfileBtn">Show Profile</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="btn btn-outline-light ms-2" id="logoutBtn">Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
 
     <br><br><br>
 

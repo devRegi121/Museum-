@@ -24,8 +24,23 @@ document.addEventListener('DOMContentLoaded', function () {
     observer.observe(welcomeSection);
 });
 
+// Timeline section By using JS
+document.addEventListener('DOMContentLoaded', () => {
+    const timelineItems = document.querySelectorAll('.timeline-item');
 
-// registration modal starts here by using js
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.5
+    });
+
+    timelineItems.forEach(item => observer.observe(item));
+});
+
 // document.addEventListener('DOMContentLoaded', function () {
 //     document.getElementById('registrationForm').addEventListener('submit', function (event) {
 //         event.preventDefault(); 

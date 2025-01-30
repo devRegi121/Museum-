@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <td>$${totalPrice.toFixed(2)}</td>
                         <td>
                             <button class="remove-btn" data-item-id="${item.id}">Remove</button>
-                            <button class="edit-btn" data-item-id="${item.id}">Edit</button>
+                           
                         </td>
                     `;
                     cartTableBody.appendChild(row);
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             error: function(xhr, status, error) {
                 console.error('Error fetching cart items:', error);
-                alert('Failed to fetch cart items.');
+                
             }
         });
     }

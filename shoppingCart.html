@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,8 @@
             margin-top: 20px;
         }
 
-        h2, h3 {
+        h2,
+        h3 {
             color: #2c3e50;
         }
 
@@ -81,7 +83,8 @@
             border-collapse: collapse;
         }
 
-        #shopping-cart th, #shopping-cart td {
+        #shopping-cart th,
+        #shopping-cart td {
             padding: 10px;
             text-align: center;
             border: 1px solid #ddd;
@@ -96,7 +99,8 @@
             background-color: #f9f9f9;
         }
 
-        .remove-btn, .edit-btn {
+        .remove-btn,
+        .edit-btn {
             padding: 8px 12px;
             border: none;
             border-radius: 5px;
@@ -131,7 +135,7 @@
 
         .checkout-btn {
             padding: 10px 20px;
-            background-color:orange;
+            background-color: orange;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -142,7 +146,7 @@
         }
 
         .checkout-btn:hover {
-            background-color:orangered;
+            background-color: orangered;
         }
 
         input[type="number"] {
@@ -160,10 +164,11 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Shopping Cart</h1>
-       
+
         <div>
             <!-- Shopping Cart -->
             <h2>Your Cart</h2>
@@ -184,20 +189,17 @@
             <h3 id="total-amount">Total: $0.00</h3>
             <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
 
-            <div id="success-alert" class="alert alert-success" role="alert" 
-            style="display: none; position: fixed; top: 20px; right: 20px; z-index: 9999; width: 300px;">
-           Purchase completed successfully!
-       </div>
-       
-       </div>
-       
-            
+
         </div>
+
+
     </div>
-    
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="js/shoppingCart.js" defer></script>
 
-   
+
 </body>
+
 </html>

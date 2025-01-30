@@ -1,10 +1,8 @@
-
 const bookingForm = document.getElementById('bookingForm');
 const eventDropdown = document.getElementById('event');
 const dateInput = document.getElementById('date');
 const message = document.getElementById('message');
 
-// Event date ranges
 const eventDates = {
     "Silk Roads": { start: "2024-09-26", end: "2025-02-23" },
     "Hew Locke Exhibition": { start: "2024-10-17", end: "2025-02-09" },
@@ -14,7 +12,6 @@ const eventDates = {
     "Van Gogh’s Vision": { start: "2025-03-05", end: "2025-03-19" }
 };
 
-// Update the date input based on selected event
 eventDropdown.addEventListener('change', () => {
     const selectedEvent = eventDropdown.value;
 
@@ -22,7 +19,7 @@ eventDropdown.addEventListener('change', () => {
         const { start, end } = eventDates[selectedEvent];
         dateInput.min = start;
         dateInput.max = end;
-        dateInput.value = ""; // Reset the date field if event changes
+        dateInput.value = ""; 
         dateInput.disabled = false;
     } else {
         dateInput.min = "";
@@ -31,27 +28,58 @@ eventDropdown.addEventListener('change', () => {
     }
 });
 
-// Handle form submission
-bookingForm.addEventListener('submit', function(event) {
+bookingForm.addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const formData = {
-        name: document.getElementById('name').value,
-        surname: document.getElementById('surname').value,
-        event: document.getElementById('event').value,
-        date: document.getElementById('date').value,
-        adults: document.getElementById('adults').value,
-        kids: document.getElementById('kids').value,
-        card: document.getElementById('card').value
+        Name: document.getElementById('name').value,
+        Surname: document.getElementById('surname').value,
+        Event: document.getElementById('event').value,
+        Date: document.getElementById('date').value,
+        Card: document.getElementById('card').value,
+        Adults: parseInt(document.getElementById('adults').value),
+        Kids: parseInt(document.getElementById('kids').value)
     };
 
-    // Save form data to local storage
-    localStorage.setItem('bookingData', JSON.stringify(formData));
+    if (!formData.Name || !formData.Surname || !formData.Event || !formData.Date || !formData.Card) {
+        message.textContent = "Please fill in all required fields.";
+        message.style.color = "red";
+        return;
+    }
 
-    message.textContent = 'Your booking has been saved successfully!';
-    bookingForm.reset();
-    dateInput.disabled = true; // Disable date input after reset
+    try {
+        const response = await fetch('https://localhost:44326/api/Booking/create', {  
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!response.ok) {
+            const errorText = await response.text();
+            throw new Error(`Error: ${response.status} - ${errorText}`);
+        }
+
+        const data = await response.json(); 
+        message.textContent = data.message; 
+        message.style.color = "green";
+        bookingForm.reset();
+        dateInput.disabled = true; 
+
+        setTimeout(() => {
+            message.textContent = ""; 
+        }, 3000);
+    } catch (error) {
+        console.error("Error submitting booking:", error); 
+        message.textContent = error.message;
+        message.style.color = "red";
+
+        setTimeout(() => {
+            message.textContent = ""; 
+        }, 3000);
+    }
 });
 
-// Disable date input by default until an event is selected
+
 dateInput.disabled = true;
