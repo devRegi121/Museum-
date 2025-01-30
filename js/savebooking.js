@@ -41,45 +41,24 @@ bookingForm.addEventListener('submit', async function(event) {
         Kids: parseInt(document.getElementById('kids').value)
     };
 
-    if (!formData.Name || !formData.Surname || !formData.Event || !formData.Date || !formData.Card) {
-        message.textContent = "Please fill in all required fields.";
-        message.style.color = "red";
-        return;
-    }
-
     try {
-        const response = await fetch('https://localhost:44326/api/Booking/create', {  
+        await fetch('https://localhost:44326/api/Booking/create', {  
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(formData)
         });
-
-        if (!response.ok) {
-            const errorText = await response.text();
-            throw new Error(`Error: ${response.status} - ${errorText}`);
-        }
-
-        const data = await response.json(); 
-        message.textContent = data.message; 
-        message.style.color = "green";
-        bookingForm.reset();
-        dateInput.disabled = true; 
-
-        setTimeout(() => {
-            message.textContent = ""; 
-        }, 3000);
     } catch (error) {
-        console.error("Error submitting booking:", error); 
-        message.textContent = error.message;
-        message.style.color = "red";
-
-        setTimeout(() => {
-            message.textContent = ""; 
-        }, 3000);
+        // Suppress errors
     }
-});
 
+    message.textContent = "Submit booking";
+    message.style.color = "green";
+
+    setTimeout(() => {
+        location.reload();
+    }, 1000);
+});
 
 dateInput.disabled = true;

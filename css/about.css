@@ -36,6 +36,17 @@ body {
     line-height: 1.8;
 }
 
+.team-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px; 
+    overflow-x: auto; 
+    padding: 20px;
+    background: black; 
+    border-radius: 10px;
+}
+
 .team-member {
     display: inline-block;
     text-align: center;

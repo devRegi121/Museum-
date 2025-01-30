@@ -4,6 +4,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventDropdown = document.getElementById('whatTheySee');
     const clearFiltersButton = document.getElementById('clearFilters');
 
+
+    function isAdmin() {
+        const userRole = localStorage.getItem("role");
+        return userRole && userRole.toLowerCase() === "admin";
+    } 
+    
     // Event listeners for filtering
     [calendarInput, visitorDropdown, eventDropdown].forEach(element => {
         element.addEventListener('change', filterExhibitions);
